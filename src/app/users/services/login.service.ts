@@ -12,7 +12,6 @@ export class LoginService {
   loginApi = (data:LoginInterface) => {
     this.http.post(this.baseUrl.getBaseUrl()+'mobile-login',data).subscribe((res:any)=>{
       console.log(res);
-
     });
   }
 }

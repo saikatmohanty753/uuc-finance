@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { LoginService } from '../services/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,8 +8,10 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent {
   @ViewChild('loginSubmit') myForm!: NgForm;
+  constructor (private login:LoginService) {}
   onsubmit = () => {
-    console.log(this.myForm.value);
+    let data = this.myForm.value;
+    let response = this.login.loginApi(data)
     this.myForm.resetForm()
   }
 }

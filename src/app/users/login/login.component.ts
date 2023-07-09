@@ -8,10 +8,12 @@ import { LoginService } from '../services/login.service';
 })
 export class LoginComponent {
   @ViewChild('loginSubmit') myForm!: NgForm;
+  private err:string = '';
   constructor (private login:LoginService) {}
   onsubmit = () => {
     let data = this.myForm.value;
     let response = this.login.loginApi(data)
     this.myForm.resetForm()
   }
+  errors = this.err
 }

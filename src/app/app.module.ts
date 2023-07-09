@@ -7,6 +7,7 @@ import { LoginComponent } from './users/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ConfigService } from './config.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './users/dashboard/dashboard.component';
 
 export function initializeApp(configService: ConfigService) {
   return () => {
@@ -18,7 +19,8 @@ export function initializeApp(configService: ConfigService) {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
